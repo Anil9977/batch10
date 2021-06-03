@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   tasks:
-    - name: install java and mavan
+    - name: install java
       apt:
         name:
           - openjdk-8-jdk
@@ -18,8 +18,8 @@
         enabled: true
     - name: docker run tomcat application
       command: sudo docker run -it -d -p 8888:8888 ksauto82/casestudy:1.0
-    handlers:
-    - name: run update
-      apt:
-        update_cache: yes
+  handlers:
+  - name: run update
+    apt:
+      update_cache: yes
 ...
