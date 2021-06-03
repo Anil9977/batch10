@@ -7,7 +7,7 @@
       state: started
       enabled: true
   - name: deploy test application
-    command: sudo docker run -it -d -p 8888:8888 ksauto82/casestudy:1.0
+    command: docker run -it -d -p 8888:8888 ksauto82/casestudy:1.0
   handlers:
   - name: run update
     apt:
