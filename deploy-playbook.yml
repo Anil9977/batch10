@@ -1,6 +1,5 @@
 ---
 - hosts: localhost
-  become: true
   tasks:
   - name: start docker service
     service:
