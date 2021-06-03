@@ -1,26 +1,25 @@
 ---
-- hosts: localhost
+- hosts: all
   become: true
   tasks:
-  - name: Install OpenJDK Java
-    become: yes
-    apt:
-      name: "{{ item }}"
-      state: present
-    with_items:
-     openjdk-8-jdk
-  - name: install docker
-    apt:
-      pkg: docker.io
-      state: present
-  - name: start docker service
-    service:
-      name: docker
-      state: started
-      enabled: true
-  - name: deploy test application
-    command: sudo docker run -it -d -p 8888:8888 ksauto82/casestudy:1.0
-  handlers:
-  - name: run update
-    apt:
-      update_cache: yes
+    - name: install java and mavan
+      apt:
+        name:
+          - openjdk-8-jdk
+        state: present
+    - name: install docker
+      apt:
+        pkg: docker.io
+        state: present
+    - name: start docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
+    - name: docker run tomcat application
+      command: sudo docker run -it -d -p 8888:8888 ksauto82/casestudy:1.0
+    handlers:
+    - name: run update
+      apt:
+        update_cache: yes
+...
