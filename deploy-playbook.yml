@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: local
   become: true
   tasks:
     - name: install java
@@ -16,7 +16,7 @@
         name: docker
         state: started
         enabled: true
-    - name: docker run tomcat application
+    - name: deploy the application
       command: sudo docker run -it -d -p 8888:8888 ksauto82/casestudy:1.0
   handlers:
   - name: run update
