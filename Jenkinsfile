@@ -16,7 +16,7 @@ node{
         catch(Exception err){
             echo "Exception occured during Preparation Of Jenkins step..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n \n Please go to ${BUILD_URL} for more details and verify the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Preparation Of Building Environment', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n \n Please go to ${BUILD_URL} for more details and verify the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Preparation Of Building Environment', to: 'anil9977pandey@gmail.com'
             throw err
         }             
     }
@@ -24,12 +24,12 @@ node{
     stage('Code Checkout'){
         try{
             echo "Checking out the code from git repository"
-            git 'https://github.com/kskunal/batch10.git'
+            git 'https://github.com/Anil9977/batch10.git'
         }
         catch(Exception err){
             echo "Exception occured during code checkout step..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Code checking', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Code checking', to: 'anil9977pandey@gmail.com'
             throw err
         }
     }
@@ -42,7 +42,7 @@ node{
         catch(Exception err){
             echo "Exception occured during Building and Compile step..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Building and Complie', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Building and Complie', to: 'anil9977pandey@gmail.com'
             throw err
         } 
     }
@@ -55,7 +55,7 @@ node{
         catch(Exception err){
             echo "Exception occured during Test the Build step..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Building and Complie', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Building and Complie', to: 'anil9977pandey@gmail.com'
             throw err
         } 
     }
@@ -68,7 +68,7 @@ node{
         catch(Exception err){
             echo "Exception occured during Generating UnitTest Report..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step -  Generate UnitTest Report', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step -  Generate UnitTest Report', to: 'anil9977pandey@gmail.com'
             throw err
         }
     }
@@ -76,12 +76,12 @@ node{
     stage('Sonarqube Scanner'){
         try{
             echo 'Scanning the application'
-            sh "${mavenCMD} sonar:sonar -Dsonar.projectKey=sonar -Dsonar.login=admin -Dsonar.password=harsh0786 -Dsonar.host.url=http://35.192.123.167:9000/"
+            sh "${mavenCMD} sonar:sonar -Dsonar.projectKey=sonar -Dsonar.login=admin -Dsonar.password=anil1234 -Dsonar.host.url=http://35.192.123.167:9000/"
             }
         catch(Exception err){
             echo "Exception occured during Sonarqube Scanner step..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Sonarqube Scanner', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Sonarqube Scanner', to: 'anil9977pandey@gmail.com'
             throw err
         } 
     }
@@ -94,7 +94,7 @@ node{
         catch(Exception err){
             echo "Exception occured during Publishing Report ..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Publishing Report', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Publishing Report', to: 'anil9977pandey@gmail.com'
             throw err
         } 
     }
@@ -107,7 +107,7 @@ node{
         catch(Exception err){
             echo "Exception occured during Buidling the Image ..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Building Image', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Building Image', to: 'anil9977pandey@gmail.com'
             throw err
         }
     }
@@ -124,7 +124,7 @@ node{
         catch(Exception err){
             echo "Exception occured during Login and Pushing the Image ..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Building Image', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Building Image', to: 'anil9977pandey@gmail.com'
             throw err
         }
     }
@@ -137,7 +137,7 @@ node{
       catch(Exception err){
           echo "Exception occured during Deploying Application..."
           currentBuild.result="FAILURE"
-          mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Deploying Application', to: 'ks.auto82@gmail.com'
+          mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Deploying Application', to: 'anil9977pandey@gmail.com'
           throw er
       }
   }
@@ -150,12 +150,12 @@ node{
         catch(Exception err){
             echo "Exception occured during Cleaning Up Workspace..."
             currentBuild.result="FAILURE"
-            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Cleaning Up Workspace', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n Kindly go to ${BUILD_URL} for more info and check the cause for the build failure. \n Error: $err \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is  Failed at step - Cleaning Up Workspace', to: 'anil9977pandey@gmail.com'
             throw er
         }
         finally{
             echo "Sucessfully Deployed"
-            mail body: 'Hi Team, \n\n The Build ${BUILD_URL} has sucesfully deployed. \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is sucessful', to: 'ks.auto82@gmail.com'
+            mail body: 'Hi Team, \n\n The Build ${BUILD_URL} has sucesfully deployed. \n\n Thanks', subject: 'Job ${JOB_NAME} (${BUILD_NUMBER}) is sucessful', to: 'anil9977pandey@gmail.com'
         }
     }
 }
