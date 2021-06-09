@@ -13,7 +13,7 @@ Manage Jenkins --> Configure System --> Extended E-mail Notification
 	check the Always option
 
 
-===================================================================================
+==================================================================================
 
 in any Jenkins Job -- configure a post build action
 
